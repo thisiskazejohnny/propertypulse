@@ -5,7 +5,8 @@ import { fetchProperties } from '@/utils/requests'
 
 const HomeProperties = async () => {
   const data = await fetchProperties()
-  // console.log(data.properties)
+  console.log(data.properties)
+
   // Randomize properties listed on homepage
   const recentProperties = data.properties
     .sort(() => Math.random() - Math.random())

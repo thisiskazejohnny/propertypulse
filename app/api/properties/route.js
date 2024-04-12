@@ -1,4 +1,3 @@
-import { useSearchParams } from 'next/navigation'
 import connectDB from '@/config/database'
 import Property from '@/models/Property'
 import { getSessionUser } from '@/utils/getSessionUser'
@@ -11,11 +10,7 @@ export const GET = async (request) => {
   try {
     await connectDB()
 
-    // const searchParams = request.nextUrl.searchParams
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const searchParams = useSearchParams()
-
+    const searchParams = request.nextUrl.searchParams
     const page = searchParams.get('page') || 1
     const pageSize = searchParams.get('pageSize') || 6
 

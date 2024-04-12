@@ -1,4 +1,3 @@
-import { useSearchParams } from 'next/navigation'
 import connectDB from '@/config/database'
 import Property from '@/models/Property'
 
@@ -8,17 +7,13 @@ export const GET = async (request) => {
     await connectDB()
 
     // const { searchParams } = new URL(request.url)
-    // const searchParams = request.nextUrl.searchParams
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const searchParams = useSearchParams()
+    const searchParams = request.nextUrl.searchParams
 
     // any query params that we want, we just use the .get method
     const location = searchParams.get('location')
     const propertyType = searchParams.get('propertyType')
 
     // console.log(location, propertyType)
-
     // Create regex pattern, 'i' case insensitive
     const locationPattern = new RegExp(location, 'i')
 
