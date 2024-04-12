@@ -23,8 +23,8 @@ export const GET = async (request) => {
       properties,
     }
 
-    return new Response(JSON.stringify(result), { status: 200 })
-    // return Response.json(result)
+    // return new Response(JSON.stringify(result), { status: 200 })
+    return Response.json(result)
   } catch (error) {
     console.log(error)
     return new Response('Something went wrong...', { status: 500 })
