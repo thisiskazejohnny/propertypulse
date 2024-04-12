@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Added header in here to prevent any overlap at small screen sizes */
+header,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  background: white;
+  /* box-shadow: 0 2rem 4rem #000; */
+  min-height: 100vh; /* Min-height to ensure everyone gets the scroll reveal */
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  /* height: 30vh; */
+}
