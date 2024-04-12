@@ -4,7 +4,7 @@ import PropertyCard from '@/components/PropertyCard'
 import { fetchProperties } from '@/utils/requests'
 
 const HomeProperties = async () => {
-  const data = await fetchProperties()
+  let data = await fetchProperties()
   console.log(data.properties)
 
   // Randomize properties listed on homepage
