@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
       <Hero />
       <InfoBoxes />
-      <FeaturedProperties />
+      {/* <FeaturedProperties /> */}
       <HomeProperties />
     </>
   )
