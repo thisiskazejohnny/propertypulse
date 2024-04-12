@@ -4,13 +4,10 @@ import PropertyCard from '@/components/PropertyCard'
 import { fetchProperties } from '@/utils/requests'
 
 const HomeProperties = async () => {
-  let data = await fetchProperties()
+  const data = await fetchProperties()
   console.log(data.properties)
 
   // Randomize properties listed on homepage
-  if (data === undefined) {
-    data = []
-  }
   const recentProperties = data.properties
     .sort(() => Math.random() - Math.random())
     .slice(0, 3)
