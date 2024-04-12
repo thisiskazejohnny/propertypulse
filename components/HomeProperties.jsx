@@ -9,8 +9,8 @@ const HomeProperties = async () => {
 
   // Randomize properties listed on homepage
   const recentProperties = data.properties
-    .sort(() => Math.random() - Math.random())
-    .slice(0, 3)
+  recentProperties &&
+    recentProperties.sort(() => Math.random() - Math.random()).slice(0, 3)
 
   return (
     <>
