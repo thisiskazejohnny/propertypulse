@@ -8,7 +8,9 @@ const HomeProperties = async () => {
   console.log(data.properties)
 
   // Randomize properties listed on homepage
-  if (data === undefined) return []
+  if (data === undefined) {
+    data = []
+  }
   const recentProperties = data.properties
     .sort(() => Math.random() - Math.random())
     .slice(0, 3)
