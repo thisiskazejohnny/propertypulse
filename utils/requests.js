@@ -10,7 +10,7 @@ And then from our front end right from this component, we're going to then fetch
 async function fetchProperties({ showFeatured = false } = {}) {
   try {
     //Handle the case where the domain is not available yet
-    if (!apiDomain || apiDomain === null) {
+    if (!apiDomain) {
       return []
     }
 
