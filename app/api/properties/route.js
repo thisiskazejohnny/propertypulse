@@ -10,9 +10,8 @@ export const GET = async (request) => {
   try {
     await connectDB()
 
-    const searchParams = request.nextUrl.searchParams
-    const page = searchParams.get('page') || 1
-    const pageSize = searchParams.get('pageSize') || 6
+    const page = request.nextUrl.searchParams.get('page') || 1
+    const pageSize = request.nextUrl.searchParams.get('pageSize') || 6
 
     const skip = (page - 1) * pageSize
 
@@ -27,7 +26,7 @@ export const GET = async (request) => {
     return new Response(JSON.stringify(result), { status: 200 })
     // return Response.json(result)
   } catch (error) {
-    if (error.cause instanceof AggregateError) console.error(e.cause.errors)
+    console.log(error)
     return new Response('Something went wrong...', { status: 500 })
   }
 }
